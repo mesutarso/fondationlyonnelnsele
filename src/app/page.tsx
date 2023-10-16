@@ -7,16 +7,21 @@ import Teams from '@/components/home/teams'
 import Magazine from '@/components/home/magazine'
 import Tesmonial from '@/components/home/tesmonials'
 import Articles from '@/components/home/articles'
+import {getHomeData, infosHome} from '@/lib/graphql/request'
 
 
-export default function Home() {
+export default async  function Home() {
+
+  const sliders = await getHomeData()
+  const {historique} = await infosHome()
+
   return (
     <section>
       <div className="lg:relative flex flex-col items-center">
-        <Hero />
+        <Hero {...sliders[0]} />
         <Stats />
-      </div>
-      <Story />
+      </div> 
+      <Story data={historique} />
       <Action />
       <Mission />
       <Teams />

@@ -1,27 +1,46 @@
 import Image from "next/image"
 import Link from "next/link"
 import { BsFillCheckCircleFill } from 'react-icons/bs'
+import RemoteImage from '@/components/images/remote'
 
-function Story() {
+type Props = {
+    data : any
+}
+
+function Story({data}:Props)  {
     return (
         <section className='container section bg-white'>
             <div className="pt-24 grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div data-aos="fade-right"
+                
+                <div data-aos="fade-right" 
                 >
-
-                    <Image src={'/story.svg'} width={520} height={560} alt='story' />
+                    <RemoteImage isFill={false} width={520} height={560} src={data.image.sourceUrl}  alt='story' />
                 </div>
                 <div data-aos="fade-left"
                     className="flex flex-col justify-around">
-                    <p className="text-primary text-md mb-4">Historique</p>
+                    <p className="text-primary text-md mb-4">{data.slogan}</p>
                     <h2 className="text-black font-bold text-3xl mb-2">
-                        VOULOIR est la voie qui mène à la réussite.
+                       {data.titre}
                     </h2>
                     <div className='text-center h-1 w-[50px] bg-orange mb-4'> </div>
                     <p className="text-sm text-text mb-4">
-                        La Fondation Lyon EL NSELE se concentre essentiellement sur l’accompagnement de la jeunesse, estimant que l’avenir de la nation congolaise en dépend. Cependant, pour y parvenir, elle doit développer des valeurs qui lui permettent de faire partie des élites.
+                    {data.description}
                     </p>
                     <ul className="grid gap-4 mb-8">
+                        {
+                            data.onglets.map((item:any,index:number)=>{
+                                ( <li key={index}>
+                                    <div className="icons flex items-center gap-6">
+                                        <BsFillCheckCircleFill size='2em' className='text-primary' />
+                                        <span>
+                                           {item.title}
+                                        </span>
+                                    </div>
+        
+        
+                                </li>)
+                            })
+                        }
                         <li>
                             <div className="icons flex items-center gap-6">
                                 <BsFillCheckCircleFill size='2em' className='text-primary' />
