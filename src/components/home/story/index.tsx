@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { BsFillCheckCircleFill } from 'react-icons/bs'
-import RemoteImage from '@/components/images/remote'
+
 
 type Props = {
     data : any
@@ -14,7 +14,7 @@ function Story({data}:Props)  {
                 
                 <div data-aos="fade-right" 
                 >
-                    <RemoteImage isFill={false} width={520} height={560} src={data.image.sourceUrl}  alt='story' />
+                    <Image  width={520} height={560} src={data.image.sourceUrl}  alt='story' />
                 </div>
                 <div data-aos="fade-left"
                     className="flex flex-col justify-around">
