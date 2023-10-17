@@ -7,32 +7,29 @@ import Teams from '@/components/home/teams'
 import Magazine from '@/components/home/magazine'
 import Tesmonial from '@/components/home/tesmonials'
 import Articles from '@/components/home/articles'
-import {getHomeData, infosHome} from '@/lib/graphql/request'
+import { getHomeData } from '@/lib/graphql/requests/home'
 
 
 export const dynamic = 'force-dynamic'
 
 
-export default async  function Home() {
+export default async function Home() {
 
-  const sliders = await getHomeData()
-  const {historique,infos,heroSliders,homeActions,missions,homeTeams,homeMagazine} = await infosHome()
+  const { historique, infos, heroSliders, homeActions, missions, homeTeams, homeMagazine, homeTemoignage, homePosts } = await getHomeData()
 
   return (
     <section>
       <div className="lg:relative flex flex-col items-center">
         <Hero {...heroSliders[0]} />
         <Stats data={infos} />
-      </div> 
+      </div>
       <Story data={historique} />
-      <Action data={homeActions}  />
-      <Mission data={missions}  />
+      <Action data={homeActions} />
+      <Mission data={missions} />
       <Teams data={homeTeams} />
       <Magazine data={homeMagazine} />
-      <Tesmonial />
-     
-      <Articles/>
-
+      <Tesmonial data={homeTemoignage} />
+      <Articles data={homePosts} />
     </section>
   )
 }

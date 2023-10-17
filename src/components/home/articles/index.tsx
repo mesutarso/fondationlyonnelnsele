@@ -1,7 +1,11 @@
-import { articles } from '@/lib/constants'
+
 import Card from './card'
 
-function Articles() {
+type Props = {
+    data : any
+}
+
+function Articles({data}:Props) {
     return (
         <section className="section bg-gray-100 ">
             <div className="container">
@@ -15,7 +19,7 @@ function Articles() {
                 <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10'>
 
                     {
-                        articles.map((article: any, index: number) => (
+                        data?.map((article: any, index: number) => (
                             <Card key={index} {...article} />
                         ))
                     }

@@ -41,40 +41,7 @@ function Story({data}:Props)  {
                                 </li>)
                             })
                         }
-                        <li>
-                            <div className="icons flex items-center gap-6">
-                                <BsFillCheckCircleFill size='2em' className='text-primary' />
-                                <span>
-                                    Soutenir les personnes dans le besoin extrême
-                                </span>
-                            </div>
-
-
-                        </li>
-                        <li>
-                            <div className="icons flex items-center gap-6">
-                                <BsFillCheckCircleFill size='2em' className='text-primary' />
-                                <span>
-                                    Accompagner la jeunesse...
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="icons flex items-center gap-6">
-                                <BsFillCheckCircleFill size='2em' className='text-primary' />
-                                <span>
-                                    Faire du monde un meilleur endroit
-                                </span>
-                            </div>
-                        </li>
-                        <li>
-                            <div className="icons flex items-center gap-6">
-                                <BsFillCheckCircleFill size='2em' className='text-primary' />
-                                <span>
-                                    Partagez votre amour pour la communauté
-                                </span>
-                            </div>
-                        </li>
+                        
                     </ul>
                     <div className=''>
                         <Link href='/a-propos'>

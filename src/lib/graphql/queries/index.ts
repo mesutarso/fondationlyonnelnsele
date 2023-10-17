@@ -166,22 +166,22 @@ query getInfosData {
       }
     }
   }
-  temoignage(first: 4) {
+  temoignages(first: 4) {
     edges {
       node {
         content(format: RENDERED)
         featuredImage {
           node {
-            sourceUrl(size: THUMBNAIL)
+            sourceUrl
           }
         }
-        title(format: RENDERED)
         tesmonies_field {
           personne {
             noms
             photo {
-              sourceUrl(size: THUMBNAIL)
+              sourceUrl
             }
+            position
           }
         }
       }
@@ -193,7 +193,7 @@ query getInfosData {
         date
         featuredImage {
           node {
-            sourceUrl(size: MEDIUM)
+            sourceUrl
           }
         }
         categories(first: 1) {
@@ -206,6 +206,7 @@ query getInfosData {
         id
         slug
         title(format: RENDERED)
+        excerpt(format: RENDERED)
       }
     }
   }

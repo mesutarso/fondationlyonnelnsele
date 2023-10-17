@@ -27,7 +27,9 @@ function Card({ title, excerpt, image, date, categorie, slug }: Props) {
                 <div className="content mt-[30px]">
 
                     <h4 className='text-xl font-semibold mb-2 line-clamp-2'>{title}</h4>
-                    <p className='text-sm text-text font-normal mb-2 line-clamp-4'>{excerpt}</p>
+                    <div className='text-sm text-text font-normal mb-2 line-clamp-4' dangerouslySetInnerHTML={{
+                        __html: excerpt
+                    }} />
 
                 </div>
             </article>
