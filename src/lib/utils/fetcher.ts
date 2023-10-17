@@ -1,4 +1,4 @@
-const endpoint = process.env.WORDPRESS_API_URL;
+const endpoint = process.env.WORDPRESS_API_URL || "https://fondation.boussoledafrique.cd/graphql";
 export const fetchGraphql = async (query: string, variables?: any) => {
     const data = await fetch(endpoint as string, {
       headers: {
