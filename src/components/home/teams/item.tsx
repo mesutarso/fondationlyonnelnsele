@@ -12,7 +12,7 @@ type ItemProps = {
         facebook?: string
         twitter?: string
         instagram?: string
-        linkendin?:string
+        linkedin?:string
         youtube?:string
     }
 }
