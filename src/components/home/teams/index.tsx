@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import {teams} from '@/lib/constants'
 import Item from './item'
 
 type Props ={

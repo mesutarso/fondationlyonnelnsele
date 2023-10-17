@@ -3,28 +3,6 @@ import { useState, useMemo } from 'react'
 import Image from "next/image"
 import { BsFillArrowLeftCircleFill, BsFillArrowRightCircleFill } from 'react-icons/bs'
 
-const items = [
-    {
-        temoignage: 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&apos;imprimerie depuis les années 1500',
-        image: '/tesmony.svg',
-        personne: {
-            nom: 'mechack Tambwe Loleka',
-            image: '/vice.svg',
-            position: 'Fullstack developer'
-        }
-
-    },
-    {
-        temoignage: 'Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l&apos;imprimerie depuis les années 1500',
-        image: '/mission.svg',
-        personne: {
-            nom: 'Lyon el Nsele',
-            image: '/vice.svg',
-            position: 'Fullstack developer'
-        }
-
-    }
-]
 
 type Props = {
     data: any

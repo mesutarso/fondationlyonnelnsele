@@ -1,5 +1,4 @@
 import Card from './card'
-import { actions } from '@/lib/constants'
 
 type Props = {
     data :{
