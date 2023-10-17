@@ -1,7 +1,18 @@
 import Card from './card'
 import { actions } from '@/lib/constants'
 
-function Action() {
+type Props = {
+    data :{
+        id: string
+        title: string
+        image: string,
+        excerpt:string,
+        slug :string
+        category?:string
+    }[]
+}
+
+function Action({data}:Props) {
     return (
         <section className='section bg-primary'>
             <div className="container">
@@ -11,8 +22,8 @@ function Action() {
                 <div data-aos="fade-in" className='mx-auto text-center h-1 w-[100px] bg-secondary mb-2'> </div>
                 <div data-aos="fade-in" className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mt-10'>
                     {
-                        actions.map((action: any, index: number) => (
-                            <Card key={index} title={action.title} description={action.description} image={action.image} link={action.link} category={action.category} />
+                        data?.map((action: any, index: number) => (
+                            <Card key={index}  {...action} />
                         ))
 
                     }

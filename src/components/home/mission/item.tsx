@@ -20,7 +20,9 @@ function Item({ number, title, description }: ItemProps) {
       </div>
       <div className='w-2/3'>
         <h3 className='text-md font-semibold'>{title}</h3>
-        <p className='text-xs text-text font-normal'>{description}</p>
+        <div className='text-xs text-text font-normal line-clamp-3' dangerouslySetInnerHTML={{
+                            __html: description
+                        }}></div>
       </div>
     </div>
   )

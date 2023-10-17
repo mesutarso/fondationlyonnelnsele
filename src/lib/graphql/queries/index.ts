@@ -36,27 +36,7 @@ query sliders {
 `;
 
 
-export const GET_OFFERS = `
-query getOffers {
-  offres(first: 4) {
-    edges {
-      node {
-        id
-        poste
-        title(format: RENDERED)
-        slug
-        catGoriesOffre {
-          edges {
-            node {
-              name
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`
+
 
 export const GET_POSTS = `
 query getPosts {
@@ -94,9 +74,15 @@ query getPosts {
 
 
 export const GET_HOME_DATA = `
-query getHome {
+query getInfosData {
   page(id: "/home", idType: URI) {
+    title
     home {
+      infos {
+        nombreDesMembres
+        nombresDesActions
+        nombresDesVolontaires
+      }
       historique {
         description
         image {
@@ -106,6 +92,136 @@ query getHome {
         titre
         onglets {
           titre
+        }
+      }
+      missionsObjectifs {
+        titre
+        slogan
+        description
+        video {
+          lienYoutube
+          poster {
+            sourceUrl
+          }
+        }
+        objectifs {
+          description
+          titre
+        }
+      }
+    }
+  }
+  sliders(first: 1) {
+    edges {
+      node {
+        id
+        titre
+        image {
+          sourceUrl
+        }
+        description
+        slogan
+      }
+    }
+  }
+  actions(first: 3) {
+    edges {
+      node {
+        id
+        date
+        categoriesAction{
+          edges{
+            node{
+              name
+            }
+          }
+        }
+        title(format: RENDERED)
+        slug
+        excerpt(format: RENDERED)
+        featuredImage {
+          node {
+            sourceUrl(size: MEDIUM)
+          }
+        }
+      }
+    }
+  }
+  teams(first: 4) {
+    edges {
+      node {
+        title(format: RENDERED)
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        teamsFields {
+          poste
+          reseauxSociaux {
+            nom
+            lien
+          }
+        }
+      }
+    }
+  }
+  temoignage(first: 4) {
+    edges {
+      node {
+        content(format: RENDERED)
+        featuredImage {
+          node {
+            sourceUrl(size: THUMBNAIL)
+          }
+        }
+        title(format: RENDERED)
+        tesmonies_field {
+          personne {
+            noms
+            photo {
+              sourceUrl(size: THUMBNAIL)
+            }
+          }
+        }
+      }
+    }
+  }
+  posts {
+    edges {
+      node {
+        date
+        featuredImage {
+          node {
+            sourceUrl(size: MEDIUM)
+          }
+        }
+        categories(first: 1) {
+          edges {
+            node {
+              name
+            }
+          }
+        }
+        id
+        slug
+        title(format: RENDERED)
+      }
+    }
+  }
+  magazine(first: 1) {
+    edges {
+      node {
+        title(format: RENDERED)
+        featuredImage {
+          node {
+            sourceUrl
+          }
+        }
+        magazine_fields {
+          fichier {
+            mediaItemUrl
+          }
         }
       }
     }

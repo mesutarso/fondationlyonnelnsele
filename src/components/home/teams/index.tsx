@@ -2,7 +2,11 @@ import Link from 'next/link'
 import {teams} from '@/lib/constants'
 import Item from './item'
 
-function Teams() {
+type Props ={
+    data:any
+}
+
+function Teams({data}:Props) {
     return (
         <section className='bg-gray-100 section'>
             <div className="container">
@@ -15,7 +19,7 @@ function Teams() {
                 </div>
                 <div className="members grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 place-items-center my-8">
                     {
-                        teams.map((item:any, index:number) => (
+                        data.map((item:any, index:number) => (
                             <Item {...item} id={index} key={index} />
                         ))
 

@@ -2,14 +2,15 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
-    title: string
-    description: string
-    image: string
-    link: string
-    category: string
+    id: string
+        title: string
+        image: string,
+        excerpt:string,
+        slug :string
+        category?:string
 }
 
-function Card({ title, description, image, link, category }: Props) {
+function Card({ title, excerpt, image, slug, category }: Props) {
     return (
 
         <div data-aos="zoom-in" className="card relative  ">
@@ -24,12 +25,12 @@ function Card({ title, description, image, link, category }: Props) {
                         <h3 className="title text-xl font-bold mb-4 is-4">{title}</h3>
                     </div>
                 </div>
-                <div className="content text-sm text-text mb-4 line-clamp-4">
-
-                    {description}
+                <div className="content text-sm text-text mb-4 line-clamp-4" dangerouslySetInnerHTML={{
+                            __html: excerpt
+                        }}>
 
                 </div>
-                <Link href={link} className='px-4 lg:px-8 py-3 bg-primary text-white mx-auto rounded-md'>
+                <Link href={slug || '#'} className='px-4 lg:px-8 py-3 bg-primary text-white mx-auto rounded-md'>
                     <span className="button is-primary is-fullwidth">
                         <strong>En Savoir plus</strong>
                     </span>

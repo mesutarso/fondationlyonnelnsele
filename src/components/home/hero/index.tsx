@@ -2,7 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import LocalImage from '@/components/images/local'
+
+
 
 type SliderProps = {
     id?: string
@@ -16,7 +17,7 @@ function Hero({ id, title, image, description, slogan }: SliderProps) {
     return (
         <section className='relative w-full min-h-[700px] lg:h-[700px] '>
             <div>
-                <Image src={image} fill sizes='100vw' alt='hero' className='object-cover aspect-auto' />
+                <Image src={image}  fill sizes='100vw' alt='hero' className='object-cover aspect-auto' />
             </div>
             <div className='absolute bg-black/20 z-10 inset-0 flex flex-col justify-center section'>
                 <div className="container section">

@@ -7,15 +7,17 @@ type ItemProps = {
     id:number
     image: string
     name: string
-    job: string
+    poste: string
     socials: {
-        facebook: string
-        twitter: string
-        instagram: string
+        facebook?: string
+        twitter?: string
+        instagram?: string
+        linkendin?:string
+        youtube?:string
     }
 }
 
-function Item({id, image, name, job, socials }: ItemProps) {
+function Item({id, image, name, poste, socials }: ItemProps) {
     const delay = id 
     return (
         <div data-aos="fade-in" data-aos-delay={delay} className='flex flex-col justify-center items-center'>
@@ -24,7 +26,7 @@ function Item({id, image, name, job, socials }: ItemProps) {
             </div>
             <div className="meta-infos flex justify-center items-center flex-col mt-">
                 <p className="my-2 text-xs text-primary">
-                    {job}
+                    {poste}
                 </p>
                 <h3>
                     {name}
@@ -32,15 +34,15 @@ function Item({id, image, name, job, socials }: ItemProps) {
                 <div className="socials flex items-center gap-2 my-2">
 
                     {
-                        socials.facebook && (
-                            <a href={socials.facebook} target="_blank" rel="noreferrer">
+                        socials?.facebook && (
+                            <a href={socials?.facebook} target="_blank" rel="noreferrer">
                                 <RiFacebookBoxFill size={"20px"} className='text-primary' />
                             </a>
                         )
                     }
                     {
-                        socials.twitter && (
-                            <a href={socials.twitter} target="_blank" rel="noreferrer">
+                        socials?.twitter && (
+                            <a href={socials?.twitter} target="_blank" rel="noreferrer">
                                 <RiTwitterXFill size={"20px"} className='text-primary' />
                             </a>
                         )
@@ -48,9 +50,23 @@ function Item({id, image, name, job, socials }: ItemProps) {
 
                     }
                     {
-                        socials.instagram && (
-                            <a href={socials.instagram} target="_blank" rel="noreferrer">
+                        socials?.instagram && (
+                            <a href={socials?.instagram} target="_blank" rel="noreferrer">
                                 <RiInstagramFill size={"20px"} className='text-primary' />
+                            </a>
+                        )
+                    }
+                    {
+                        socials?.linkedin && (
+                            <a href={socials?.linkedin} target="_blank" rel="noreferrer">
+                                <RiLinkedinFill size={"20px"} className='text-primary' />
+                            </a>
+                        )
+                    }
+                    {
+                        socials?.youtube && (
+                            <a href={socials?.youtube} target="_blank" rel="noreferrer">
+                                <RiLinkedinFill size={"20px"} className='text-primary' />
                             </a>
                         )
                     }
